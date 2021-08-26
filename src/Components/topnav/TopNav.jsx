@@ -10,6 +10,8 @@ import user_image from "../../assets/images/adminphoto.png";
 
 import user_menu from "../../assets/JsonData/user_menus.json";
 
+import ThemeMenu from "../thememenu/ThemeMenu";
+
 const curr_user = {
   display_name: "Myrat Chayyev",
   image: user_image
@@ -67,8 +69,7 @@ const TopNav = () => {
           />
         </div>
         <div className="topnav__right-item">
-          <DropDown />
-          {/* dropdown here */}
+          <ThemeMenu />
         </div>
       </div>
     </div>

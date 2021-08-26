@@ -2,19 +2,30 @@ import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 
+import { createStore } from "redux";
+
+import { Provider } from "react-redux";
+
+import rootReducer from "./redux/reducers";
+
 import "./assets/boxicons-2.0.7/css/boxicons.min.css";
 import "./assets/css/grid.css";
 import "./assets/css/index.css";
+import "./assets/css/theme.css";
 
 import Layout from "./Components/Layout/Layout";
 import Dashboard from "./pages/Dashboard";
 
-document.title = "Myrat Charyyev";
+const store = createStore(rootReducer);
+
+document.title = "Admin";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Layout />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <Layout />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById("root")
 );
 
